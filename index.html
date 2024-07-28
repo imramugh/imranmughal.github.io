@@ -1,188 +1,183 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imran Mughal</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/vat2cat.css">
     <style>
         :root {
-            --navbar-height: 76px;
+            --navbar-height: 96px;
+        }
+        html {
+            scroll-behavior: smooth;
         }
         body {
+            font-family: 'myriad-pro', sans-serif;
+            color: #666;
+            font-size: 1.5em;
+            line-height: 1.6;
             padding-top: var(--navbar-height);
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
-            font-size: 1.25rem;
-            line-height: 1.7;
-            position: relative;
         }
-        h1, h2, h3, h4, h5, h6, .navbar-brand {
-            font-weight: 700;
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+            font-weight: 600;
+            letter-spacing: -.020em;
+        }
+        h1 { font-size: 4rem; }
+        h2 { font-size: 3.5rem; }
+        h3 { font-size: 3rem; }
+        h4 { font-size: 2.5rem; }
+        h5 { font-size: 2rem; }
+        h6 { font-size: 1.5rem; }
+        .lead {
+            font-size: 1.5rem;
         }
         .navbar {
-            transition: all 0.3s ease;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
             height: var(--navbar-height);
+            transition: all 0.3s ease;
         }
         .navbar-brand {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
         .nav-link {
-            font-size: 1.3rem;
-            font-weight: 400;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            margin-left: .5em;
         }
-        .nav-link.active {
-            background-color: #007bff;
-            color: white !important;
+        .navbar.sticky-top {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .navbar.scrolled {
-            background-color: rgba(33, 37, 41, 0.9) !important;
+        .offcanvas {
+            width: 300px;
         }
-        .navbar.scrolled .navbar-brand,
-        .navbar.scrolled .nav-link {
-            color: #fff !important;
-        }
-        .navbar.scrolled .nav-link.active {
-            background-color: #fff;
-            color: #007bff !important;
-        }
-        .navbar.scrolled .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: #666;
-                padding: 1rem;
-                border-radius: 0 0 0.25rem 0.25rem;
-            }
-            .navbar-collapse .nav-link {
-                color: white !important;
-            }
-            .navbar-collapse .nav-link.active {
-                background-color: #007bff;
-            }
+        .offcanvas-header {
+            height: var(--navbar-height);
         }
         section {
-            min-height: calc(100vh - var(--navbar-height));
-            padding: 2rem 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 120px 0;
         }
-        section h2 {
-            font-size: 3.5rem;
+        @media (max-width: 768px) {
+            section {
+                padding-top: 20px;
+            }
+        }
+        .hero {
+            background-color: #f8f9fa;
+        }
+        .hero h1 {
+            font-size: 4.4rem;
+            margin-bottom: 1rem;
+        }
+        .hero .lead {
+            font-size: 2.0rem;
             margin-bottom: 2rem;
         }
-        .card-title {
-            font-size: 1.8rem;
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .card-text {
-            font-size: 1.25rem;
+        .photography {
+            background-color: #f8f9fa;
         }
-        .btn {
-            font-size: 1.25rem;
-            padding: 0.75rem 1.5rem;
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 0;
+            font-size: 1rem;
         }
-        .form-control {
-            font-size: 1.25rem;
-            padding: 0.75rem 1rem;
-        }
-        .footer-content {
-            opacity: 0.5;
-            transition: opacity 0.3s ease;
-        }
-        .footer-content:hover,
-        .footer-content:hover a {
-            opacity: 1;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
-            height: 100%;
+        .footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6 {
+            color: #aaa;
         }
         .social-icons a {
-            margin-left: 15px;
-            transition: opacity 0.3s ease;
+            color: #666;
+            font-size: 28px;
+            margin-right: 20px;
         }
-        .social-icons a:hover {
-            opacity: 1;
+        .btn {
+            font-size: 1.5rem;
+            padding: 12px 24px;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">My Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container h-100">
+            <a class="navbar-brand" href="#home">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#work">Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#photography">Photography</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#work">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#photography">Photography</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1>Welcome to Our Website</h1>
+                    <p class="lead">We create amazing digital experiences for our clients.</p>
+                    <a href="#contact" class="btn btn-primary btn-lg">Get in touch</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/api/placeholder/600/400" alt="Hero Image" class="hero-image">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Work Section -->
-    <section id="work" class="py-5 bg-light">
+    <section id="work" class="work">
         <div class="container">
-            <h2 class="text-center mb-4">My Work</h2>
+            <h2 class="text-center mb-5">Our Work</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Project 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 1</h5>
-                            <p class="card-text">A brief description of Project 1. This project showcases my skills in web development and user interface design.</p>
-                        </div>
-                    </div>
+                <div class="col-lg-6">
+                    <p>We specialize in creating innovative solutions for businesses of all sizes. Our team of experts is dedicated to delivering high-quality results that exceed expectations.</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Project 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 2</h5>
-                            <p class="card-text">A brief description of Project 2. This project demonstrates my expertise in mobile app development and user experience design.</p>
+                <div class="col-lg-6">
+                    <div class="row row-cols-2 g-4">
+                        <div class="col text-center">
+                            <i class="bi bi-laptop fs-1"></i>
+                            <h5 class="mt-3">Web Design</h5>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Project 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 3</h5>
-                            <p class="card-text">A brief description of Project 3. This project highlights my abilities in data visualization and interactive dashboard creation.</p>
+                        <div class="col text-center">
+                            <i class="bi bi-phone fs-1"></i>
+                            <h5 class="mt-3">Mobile Apps</h5>
+                        </div>
+                        <div class="col text-center">
+                            <i class="bi bi-graph-up fs-1"></i>
+                            <h5 class="mt-3">Analytics</h5>
+                        </div>
+                        <div class="col text-center">
+                            <i class="bi bi-bullseye fs-1"></i>
+                            <h5 class="mt-3">Marketing</h5>
                         </div>
                     </div>
                 </div>
@@ -191,123 +186,136 @@
     </section>
 
     <!-- Photography Section -->
-    <section id="photography" class="py-5">
+    <section id="photography" class="photography">
         <div class="container">
-            <h2 class="text-center mb-4">Photography</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <img src="/api/placeholder/400/400" class="img-fluid rounded" alt="Photo 1">
+            <h2 class="text-center mb-5">Photography</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <img src="/api/placeholder/400/400" alt="Instagram Photo 1" class="img-fluid rounded">
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="/api/placeholder/400/400" class="img-fluid rounded" alt="Photo 2">
+                <div class="col">
+                    <img src="/api/placeholder/400/400" alt="Instagram Photo 2" class="img-fluid rounded">
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="/api/placeholder/400/400" class="img-fluid rounded" alt="Photo 3">
+                <div class="col">
+                    <img src="/api/placeholder/400/400" alt="Instagram Photo 3" class="img-fluid rounded">
+                </div>
+                <div class="col">
+                    <img src="/api/placeholder/400/400" alt="Instagram Photo 4" class="img-fluid rounded">
+                </div>
+                <div class="col">
+                    <img src="/api/placeholder/400/400" alt="Instagram Photo 5" class="img-fluid rounded">
+                </div>
+                <div class="col">
+                    <img src="/api/placeholder/400/400" alt="Instagram Photo 6" class="img-fluid rounded">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
+    <section id="contact" class="contact">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Me</h2>
+            <h2 class="text-center mb-5">Contact Us</h2>
             <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                <div class="col-lg-8">
+                    <div data-tf-widget="YOUR_TYPEFORM_ID" data-tf-opacity="100" data-tf-iframe-props="title=Contact Form" data-tf-transitive-search-params data-tf-medium="snippet" style="width:100%;height:500px;"></div>
+                    <script src="//embed.typeform.com/next/embed.js"></script>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container footer-content">
+    <footer class="footer">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-                    <p>
-                        <a href="#" class="text-white">Privacy Policy</a> | 
-                        <a href="#" class="text-white">Terms of Use</a>
-                    </p>
-                </div>
-                <div class="col-md-6">
+                <div class="col-lg-6">
+                    <h4>Connect with us</h4>
                     <div class="social-icons">
-                        <a href="#" class="text-white" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-white" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#" class="text-white" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white" title="Behance"><i class="fab fa-behance-square"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-behance"></i></a>
                     </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for updates and special offers.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email" aria-label="Your email" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-light" type="button" id="button-addon2">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const navbar = document.querySelector('.navbar');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('section');
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        const navbarToggler = document.querySelector('.navbar-toggler');
+        // JavaScript to handle sticky navbar
+        window.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky-top');
+            } else {
+                navbar.classList.remove('sticky-top');
+            }
+        });
 
-        // Smooth scroll for navigation links and collapse menu on mobile
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.navbar-nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                targetSection.scrollIntoView({behavior: 'smooth'});
-                
-                // Collapse the menu if it's expanded (on mobile)
-                if (navbarCollapse.classList.contains('show')) {
-                    navbarToggler.click();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    // Close the offcanvas menu
+                    const offcanvasElement = document.querySelector('.offcanvas');
+                    const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+                    if (offcanvas) {
+                        offcanvas.hide();
+                    }
+
+                    // Smooth scroll to the target element
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
 
-        // Highlight active section in navigation
-        function setActiveLink() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - navbar.offsetHeight;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
-                    current = section.getAttribute('id');
+        // Adjust scroll position on mobile devices
+        function adjustScrollForMobile() {
+            if (window.innerWidth <= 768) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const currentScroll = window.pageYOffset;
+                if (currentScroll < navbarHeight) {
+                    window.scrollTo(0, 0);
+                } else {
+                    const sections = document.querySelectorAll('section');
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop - navbarHeight;
+                        const sectionBottom = sectionTop + section.offsetHeight;
+                        if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
+                            window.scrollTo(0, sectionTop);
+                        }
+                    });
                 }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
+            }
         }
 
-        // Change navbar style on scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            setActiveLink();
-        });
-
-        // Set active link on page load
-        setActiveLink();
+        // Call the function on page load and resize
+        window.addEventListener('load', adjustScrollForMobile);
+        window.addEventListener('resize', adjustScrollForMobile);
+        window.addEventListener('scroll', adjustScrollForMobile);
     </script>
 </body>
 </html>
