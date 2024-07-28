@@ -1,8 +1,312 @@
-<html>
-    <head>
-        <title>Imran Mughal</title>
-    </head>
-    <body>
-        <h1>imranmughal</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        :root {
+            --navbar-height: 76px;
+        }
+        body {
+            padding-top: var(--navbar-height);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.25rem;
+            line-height: 1.7;
+            position: relative;
+        }
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-weight: 700;
+        }
+        .navbar {
+            transition: all 0.3s ease;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            height: var(--navbar-height);
+        }
+        .navbar-brand {
+            font-size: 2rem;
+        }
+        .nav-link {
+            font-size: 1.3rem;
+            font-weight: 400;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        .nav-link.active {
+            background-color: #007bff;
+            color: white !important;
+        }
+        .navbar.scrolled {
+            background-color: rgba(33, 37, 41, 0.9) !important;
+        }
+        .navbar.scrolled .navbar-brand,
+        .navbar.scrolled .nav-link {
+            color: #fff !important;
+        }
+        .navbar.scrolled .nav-link.active {
+            background-color: #fff;
+            color: #007bff !important;
+        }
+        .navbar.scrolled .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: #666;
+                padding: 1rem;
+                border-radius: 0 0 0.25rem 0.25rem;
+            }
+            .navbar-collapse .nav-link {
+                color: white !important;
+            }
+            .navbar-collapse .nav-link.active {
+                background-color: #007bff;
+            }
+        }
+        section {
+            min-height: calc(100vh - var(--navbar-height));
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+        .card-title {
+            font-size: 1.8rem;
+        }
+        .card-text {
+            font-size: 1.25rem;
+        }
+        .btn {
+            font-size: 1.25rem;
+            padding: 0.75rem 1.5rem;
+        }
+        .form-control {
+            font-size: 1.25rem;
+            padding: 0.75rem 1rem;
+        }
+        .footer-content {
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        .footer-content:hover,
+        .footer-content:hover a {
+            opacity: 1;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            height: 100%;
+        }
+        .social-icons a {
+            margin-left: 15px;
+            transition: opacity 0.3s ease;
+        }
+        .social-icons a:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#photography">Photography</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet.</p>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">My Work</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">A brief description of Project 1. This project showcases my skills in web development and user interface design.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2</h5>
+                            <p class="card-text">A brief description of Project 2. This project demonstrates my expertise in mobile app development and user experience design.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">A brief description of Project 3. This project highlights my abilities in data visualization and interactive dashboard creation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Section -->
+    <section id="photography" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Photography</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="/api/placeholder/400/400" class="img-fluid rounded" alt="Photo 1">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="/api/placeholder/400/400" class="img-fluid rounded" alt="Photo 2">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="/api/placeholder/400/400" class="img-fluid rounded" alt="Photo 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+                    <p>
+                        <a href="#" class="text-white">Privacy Policy</a> | 
+                        <a href="#" class="text-white">Terms of Use</a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#" class="text-white" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="text-white" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white" title="Behance"><i class="fab fa-behance-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+
+        // Smooth scroll for navigation links and collapse menu on mobile
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({behavior: 'smooth'});
+                
+                // Collapse the menu if it's expanded (on mobile)
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+
+        // Highlight active section in navigation
+        function setActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navbar.offsetHeight;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Change navbar style on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            setActiveLink();
+        });
+
+        // Set active link on page load
+        setActiveLink();
+    </script>
+</body>
 </html>
